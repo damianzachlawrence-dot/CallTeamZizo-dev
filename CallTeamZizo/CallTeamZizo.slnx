@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CallTeamZizo/CallTeamZizo.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
