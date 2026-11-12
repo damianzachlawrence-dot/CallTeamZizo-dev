@@ -1,0 +1,33 @@
+<main class="contact-page">
+  <section class="contact-hero"><div class="container"><span class="eyebrow">We're ready when you are</span><h1>Let's start a<br><span>conversation.</span></h1><p>Tell us what you have in mind. We'll help you find the right digital setup for your business.</p></div></section>
+  <section class="section contact-section"><div class="container contact-layout">
+    <aside class="contact-details"><span class="eyebrow">Get in touch</span><h2>One good conversation can start a lot.</h2><p>Share a little about your business and what you're looking for. We'll take it from there.</p>
+      <a class="contact-detail" [href]="generalEmailHref"><span class="detail-icon">✉</span><span><small>Email</small><b>{{ business.email }}</b></span><span class="arrow">↗</span></a>
+      <a class="contact-detail" [href]="'tel:' + business.phoneHref"><span class="detail-icon">☎</span><span><small>Call Jordan</small><b>{{ business.phoneDisplay }}</b></span><span class="arrow">↗</span></a>
+      <div class="contact-detail"><span class="detail-icon">⌖</span><span><small>Address</small><b>{{ business.address }}</b></span></div>
+      <div class="contact-detail"><span class="detail-icon">◷</span><span><small>Operating times</small><b>{{ business.hours }}</b></span></div>
+    </aside>
+    <div class="form-card glass-card">
+      <div class="form-heading"><h2>Tell us about your project</h2><p>Fields marked <span>*</span> are required.</p></div>
+      <form [formGroup]="contactForm" (ngSubmit)="submit()" novalidate>
+        <label for="name">Your name <span>*</span></label><input id="name" type="text" formControlName="name" placeholder="Alex Smith" autocomplete="name"><small class="error" *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].invalid">Please enter your name (at least 2 characters).</small>
+        <label for="email">Email address <span>*</span></label><input id="email" type="email" formControlName="email" placeholder="alex@yourbusiness.com" autocomplete="email"><small class="error" *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid">Please enter a valid email address.</small>
+        <label for="service">What are you interested in?</label><select id="service" formControlName="service"><option>Basic website</option><option>Website + chatbot</option><option>AI receptionist</option><option>Not sure yet</option></select>
+        <label for="message">A little about what you need <span>*</span></label><textarea id="message" rows="4" formControlName="message" placeholder="What would you like to improve for your business?"></textarea><small class="error" *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].invalid">Please share a little more (at least 10 characters).</small>
+        <button class="button button-primary submit-button" type="submit">Send a message <span aria-hidden="true">↗</span></button>
+        <p class="demo-note">Demo only: the site does not send or store your information. Send opens a demo notice and, where supported, a prefilled email draft.</p>
+      </form>
+    </div>
+  </div></section>
+
+  <div class="demo-modal-backdrop" *ngIf="showDemoPopup" (click)="closeDemoPopup()">
+    <section class="demo-modal glass-card" role="dialog" aria-modal="true" aria-labelledby="demo-title" aria-describedby="demo-description" (click)="$event.stopPropagation()">
+      <button class="modal-close" type="button" aria-label="Close dialog" (click)="closeDemoPopup()">×</button>
+      <span class="modal-icon" aria-hidden="true">i</span>
+      <span class="eyebrow">Current demo app</span>
+      <h2 id="demo-title">This website form isn't connected.</h2>
+      <p id="demo-description">This demo website has not submitted or saved your details. If your device supports email links, a draft addressed to Call Team Zizo has been opened. Review it and press Send in your email app to contact the business.</p>
+      <div class="modal-actions"><button class="button button-primary" type="button" (click)="composeEmail()">Open email app <span aria-hidden="true">↗</span></button><button class="button button-secondary" type="button" (click)="closeDemoPopup()">Close</button></div>
+    </section>
+  </div>
+</main>

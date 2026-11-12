@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" routerLink="/" aria-label="Call Team Zizo home" (click)="closeMenu()">
+      <span class="brand-mark">Z<span>·</span></span>
+      <span>CALL TEAM <strong>ZIZO</strong></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" [attr.aria-expanded]="menuOpen" (click)="menuOpen = !menuOpen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="navigation" [class.open]="menuOpen" aria-label="Main navigation">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/blog" routerLinkActive="active" (click)="closeMenu()">Blog</a>
+      <a class="nav-contact" routerLink="/contact" (click)="closeMenu()">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>

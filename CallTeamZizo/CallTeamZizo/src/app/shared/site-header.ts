@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-site-header',
+  standalone: false,
+  templateUrl: './site-header.html',
+  styleUrl: './site-header.css'
+})
+export class SiteHeader {
+  menuOpen = false;
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --page: #050b18;
+  --panel: #0c1526;
+  --panel-light: #111e33;
+  --blue: #168cff;
+  --cyan: #3ce5ff;
+  --text: #f3f8ff;
+  --muted: #9aabc3;
+  --line: rgba(159, 190, 228, 0.14);
+  --glow: 0 0 55px rgba(22, 140, 255, 0.18);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--page);
+  color: var(--text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--page); }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+::selection { color: #fff; background: #0878e8; }
+
+.container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+.section { padding: 104px 0; }
+.eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 700; }
+.section-heading { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+.section-heading h2 { margin: 14px 0; font: 600 clamp(2.2rem, 5vw, 3.6rem)/1.08 'Space Grotesk', sans-serif; letter-spacing: -.055em; }
+.section-heading p { max-width: 600px; margin: 0 auto; color: var(--muted); line-height: 1.75; }
+.button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 0 22px; border: 1px solid transparent; border-radius: 9px; text-decoration: none; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: #03101e; background: linear-gradient(110deg, var(--cyan), #54aaff); box-shadow: 0 10px 32px rgba(22, 140, 255, .24); }
+.button-secondary { border-color: var(--line); background: rgba(255,255,255,.025); color: var(--text); }
+.glass-card { border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(150deg, rgba(20, 38, 63, .82), rgba(8, 17, 32, .94)); box-shadow: var(--glow); }
+
+@media (max-width: 700px) {
+  .container { width: min(100% - 32px, 1160px); }
+  .section { padding: 76px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

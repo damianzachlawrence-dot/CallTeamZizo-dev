@@ -1,0 +1,43 @@
+<main>
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="hero-badge"><span class="pulse"></span> YOUR ALWAYS-ON DIGITAL TEAM</span>
+        <h1>Make every<br><span>first impression</span><br>count.</h1>
+        <p>Basic website builds, helpful chatbots, and AI receptionist services that help your business show up and answer every opportunity.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#plans">Find your plan <span aria-hidden="true">↗</span></a><a class="button button-secondary" routerLink="/contact">Talk with Jordan <span aria-hidden="true">→</span></a></div>
+        <div class="hero-proof"><div class="proof-avatars"><span>Z</span><span>AI</span><span>24</span></div><span>Better conversations start here</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Website preview illustration">
+        <div class="website-preview"><div class="browser-bar"><span></span><span></span><span></span><small>yourbusiness.co.za</small></div><div class="preview-content"><div class="preview-nav"><b>YOUR BRAND</b><i></i><i></i><i></i></div><div class="preview-copy"><span>WELCOME TO YOUR NEXT CHAPTER</span><b>A website that<br>works for you.</b><i></i><div class="preview-button"></div></div><div class="preview-side"><span></span><span></span><span></span></div></div><div class="preview-caption"><span class="preview-status"></span>Simple, clear, ready for customers</div></div>
+      </div>
+    </div>
+    <div class="container hero-bottom"><span>BUILT TO HELP YOUR BUSINESS GROW</span><span class="hero-line"></span><span>WEB · CHAT · VOICE</span></div>
+  </section>
+
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-heading"><span class="eyebrow">A smarter way to show up</span><h2>Three ways to make<br>your business <span>stand out.</span></h2><p>We bring a straightforward website build, customer conversations, and first response together in one simple digital toolkit.</p></div>
+      <div class="service-grid"><article class="service-card glass-card" *ngFor="let service of services"><div class="service-top"><span class="service-icon">{{ service.icon }}</span><span class="service-number">{{ service.number }} / 03</span></div><h3>{{ service.title }}</h3><p>{{ service.description }}</p><a routerLink="/contact" aria-label="Learn more about {{ service.title }}">Explore service <span aria-hidden="true">↗</span></a><div class="service-glow"></div></article></div>
+    </div>
+  </section>
+
+  <section class="process-section section">
+    <div class="container process-layout">
+      <div class="process-copy"><span class="eyebrow">Small business, big presence</span><h2>Your next customer is already looking.</h2><p>Give them a better first impression, a faster answer, and a clear next step — whether they find you on a phone, a screen, or after hours.</p><a class="text-link" routerLink="/about">Get to know our approach <span aria-hidden="true">→</span></a></div>
+      <div class="process-steps"><div class="process-step"><span class="step-number">01</span><div><h3>We get to know your business</h3><p>We learn what makes you different and who you want to reach.</p></div></div><div class="process-step"><span class="step-number">02</span><div><h3>We build your digital toolkit</h3><p>Your basic website and customer experience are shaped around your goals.</p></div></div><div class="process-step"><span class="step-number">03</span><div><h3>You focus on what you do best</h3><p>We help your digital front door keep working while you run the business.</p></div></div></div>
+    </div>
+  </section>
+
+  <section class="section pricing-section" id="plans">
+    <div class="container">
+      <div class="section-heading"><span class="eyebrow">Straightforward monthly plans</span><h2>Choose your <span>starting point.</span></h2><p>Start with what your business needs today. All prices are in USD per month.</p></div>
+      <div class="pricing-grid"><article class="pricing-card glass-card" *ngFor="let plan of plans" [class.featured]="plan.popular"><div class="popular-tag" *ngIf="plan.popular">MOST POPULAR</div><div class="plan-name">{{ plan.name }}</div><p class="plan-description">{{ plan.description }}</p><div class="price"><span class="currency">$</span>{{ plan.price }}<span class="per-month">/ month</span></div><a class="button" [class.button-primary]="plan.popular" [class.button-secondary]="!plan.popular" routerLink="/contact">Let's talk <span aria-hidden="true">↗</span></a><div class="feature-divider"></div><span class="includes">WHAT'S INCLUDED</span><ul><li *ngFor="let feature of plan.features"><span>✓</span>{{ feature }}</li></ul></article></div>
+      <p class="pricing-note">Have a question about what's included? <a routerLink="/contact">Let's talk through it.</a></p>
+    </div>
+  </section>
+
+  <section class="section blog-teaser"><div class="container blog-teaser-inner"><div><span class="eyebrow">From the Zizo blog</span><h2>Understand the tools<br>behind a better experience.</h2></div><a class="button button-secondary" routerLink="/blog">Read the articles <span aria-hidden="true">↗</span></a></div></section>
+  <section class="closing-cta"><div class="container closing-inner"><span class="eyebrow">Let's make something work</span><h2>Ready to get your<br><span>business noticed?</span></h2><a class="button button-primary" routerLink="/contact">Start a conversation <span aria-hidden="true">↗</span></a></div></section>
+</main>

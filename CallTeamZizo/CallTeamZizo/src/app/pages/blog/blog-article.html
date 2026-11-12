@@ -1,0 +1,7 @@
+<main class="blog-page">
+  <ng-container *ngIf="post; else missingArticle">
+    <header class="article-hero"><div class="container"><a class="back-link" routerLink="/blog">← All articles</a><span class="eyebrow">{{ post.readTime }} · Call Team Zizo guide</span><h1>{{ post.title }}</h1><p>{{ post.summary }}</p></div></header>
+    <article class="article-content container"><p class="article-intro">{{ post.intro }}</p><section class="article-section" *ngFor="let section of post.sections"><h2>{{ section.heading }}</h2><p *ngFor="let paragraph of section.paragraphs">{{ paragraph }}</p><ul *ngIf="section.bullets"><li *ngFor="let bullet of section.bullets">{{ bullet }}</li></ul></section><aside class="article-cta glass-card"><div><span class="eyebrow">Have a question?</span><h2>Let's talk through your next step.</h2></div><a class="button button-primary" routerLink="/contact">Contact us <span aria-hidden="true">↗</span></a></aside><a class="back-link bottom-back" routerLink="/blog">← Back to all articles</a></article>
+  </ng-container>
+  <ng-template #missingArticle><section class="not-found container"><span class="eyebrow">Article not found</span><h1>That article isn't here.</h1><a class="button button-primary" routerLink="/blog">Browse the blog</a></section></ng-template>
+</main>
